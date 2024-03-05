@@ -1,27 +1,24 @@
 from flask import Flask, request, jsonify
 import pandas as pd
-from sklearn.linear_model import Ridge
-import numpy as np
-
-# Load the trained model and other necessary data
-ridge_model = Ridge(alpha=1.0)  # Load your trained Ridge regression model here
-# Load other necessary data such as temperature, humidity, etc.
+from sklearn.externals import joblib
 
 app = Flask(__name__)
 
-@app.route('/')
-def home():
-    return 'Welcome to the Crop Yield Prediction Algorithm!'
+# Load the trained model
+model = joblib.load('model.pkl')
 
 @app.route('/predict', methods=['POST'])
 def predict():
+    # Get input data from the request
     data = request.get_json()
-    # Assume data contains the features required for prediction (temperature, humidity, etc.)
-    # Preprocess the data if necessary
-    # Make predictions using the trained model
-    # Return the prediction as a JSON response
-    prediction = ridge_model.predict(np.array(data).reshape(1, -1))
+
+    # Convert data to DataFrame
+    input_data = pd.DataFrame(data, index=[0])
+
+    # Make prediction
+    prediction = model.predict(input_data)
+
+    # Return prediction as JSON response
     return jsonify({'prediction': prediction[0]})
 
 if __name__ == '__main__':
-    app.run(debug=True)
