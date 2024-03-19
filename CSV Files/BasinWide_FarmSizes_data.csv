@@ -1,0 +1,8 @@
+BasinWide_FarmSizes_data = [
+{'Basin': 'Almond Meats', 'Farm Size': 2022, 'Farm Count': 115500, 'Per Acre': 1.05, 'Total': 120900, 'Unit': 'ton'},
+{'Crop': 'Almond Hulls', 'Year': 2022, 'Bearing Acreage': None, 'Per Acre': None, 'Total': 242000, 'Unit': 'ton'},
+{'Crop': 'Almond Shells', 'Year': 2022, 'Bearing Acreage': None, 'Per Acre': None, 'Total': 120900, 'Unit': 'ton'},
+{'Crop': 'Pistachios', 'Year': 2022, 'Bearing Acreage': 1126, 'Per Acre': 2.8, 'Total': 3160, 'Unit': 'ton'},
+{'Crop': 'Walnuts', 'Year': 2022, 'Bearing Acreage': 74500, 'Per Acre': 2.45, 'Total': 192000, 'Unit': 'ton'}
+]
+BasinWide_FarmSizes_data_df = pd.DataFrame(BasinWide_FarmSizes_data)

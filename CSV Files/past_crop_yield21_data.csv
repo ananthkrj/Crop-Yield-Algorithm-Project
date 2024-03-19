@@ -1,0 +1,21 @@
+# past crop yield data for 2021
+past_crop_yield21_data = [
+        {'Crop': 'Almond Meats', 'Year': 2021, 'Bearing Acreage': 109200, 'Per Acre': 1.15, 'Total': 125600, 'Unit': 'ton'},
+        {'Crop': 'Almond Hulls', 'Year': 2021, 'Bearing Acreage': None, 'Per Acre': None, 'Total': 242000, 'Unit': 'ton'},
+        {'Crop': 'Almond Shells', 'Year': 2021, 'Bearing Acreage': None, 'Per Acre': None, 'Total': 120900, 'Unit': 'ton'},
+        {'Crop': 'Pistachios', 'Year': 2021, 'Bearing Acreage': 911, 'Per Acre': 2.04, 'Total': 1860, 'Unit': 'ton'},
+        {'Crop': 'Walnuts', 'Year': 2021, 'Bearing Acreage': 75700, 'Per Acre': 2.45, 'Total': 186000, 'Unit': 'ton'}
+]
+
+past_crop_yield_df = pd.DataFrame(past_crop_yield21_data)
+
+# past gross value data for 2021
+gross_value21_data = [
+        {'Crop': 'Almond Meats', 'Year': 2021, 'Per unit in dollars': 3610.00, 'Subtotal': None, 'Total in dollars': 453764000},
+        {'Crop': 'Almond Hulls', 'Year': 2021, 'Per unit in dollars': 130.00, 'Subtotal': None, 'Total in dollars': 32666000},
+        {'Crop': 'Almond Shells', 'Year': 2021, 'Per unit in dollars': 37.00, 'Subtotal': None, 'Total in dollars': 534000},
+        {'Crop': 'Pistachios', 'Year': 2021, 'Per unit in dollars': 4267.00, 'Subtotal': None, 'Total in dollars': 8364000},
+        {'Crop': 'Walnuts', 'Year': 2021, 'Per unit in dollars': 1980.00, 'Subtotal': None, 'Total in dollars': 367825000}
+]
+gross_value_data_df = pd.DataFrame(gross_value21_data)
+
