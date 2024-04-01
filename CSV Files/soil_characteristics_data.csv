@@ -1,60 +1,9 @@
-# soil characteristics for San Joaquin
-soil_characteristics_data = [
-    {'Soil Horizons': 'Ap',
-     'soil_type': 'Loam',
-     'pH': 7.3,
-     'nutrient_content': 'High',
-     'depth': '0-6 inches',
-     'organic_matter': 'Medium',
-    },
-    {'Soil Horizons': 'Bt1',
-     'soil_type': 'Loam',
-     'pH': 5.7,
-     'nutrient_content': 'Good',
-     'depth': '6-10 inches',
-     'organic_matter': 'Medium',
-    },
-    {'Soil Horizons': 'Bt2',
-     'soil_type': 'Loam',
-     'pH': 5.9,
-     'nutrient_content': 'High',
-     'depth': '10-16 inches',
-     'organic_matter': 'Medium',
-    },
-    {'Soil Horizons': '2Bt3',
-     'soil_type': 'Clay',
-     'pH': 7.0,
-     'nutrient_content': 'High',
-     'depth': '16-21 inches',
-     'organic_matter': 'Medium',
-    },
-    {'Soil Horizons': '2Bt4',
-     'soil_type': 'Clay',
-     'pH': 7.3,
-     'nutrient_content': 'High',
-     'depth': '21-26 inches',
-     'organic_matter': 'Medium',
-    },
-    {'Soil Horizons': '2Bqm1',
-     'soil_type': 'Indurated Duripan',
-     'pH': 8.0,
-     'nutrient_content': 'High',
-     'depth': '26-29 inches',
-     'organic_matter': 'Medium',
-    },
-    {'Soil Horizons': '2Bqm2',
-     'soil_type': 'Duripan',
-     'pH': 8.0,
-     'nutrient_content': 'High',
-     'depth': '29-48 inches',
-     'organic_matter': 'Medium',
-    },
-    {'Soil Horizons': '2Bq',
-     'soil_type': 'Duripan',
-     'pH': 8.0,
-     'nutrient_content': 'High',
-     'depth': '48-60 inches',
-     'organic_matter': 'Medium',
-    },
-]
-soil_characteristics_data_df = pd.DataFrame(soil_characteristics_data_data)
+Soil Horizons,soil_type,pH,nutrient_content,depth,organic_matter
+Ap,Loam,7.3,High,0-6 inches,Medium
+Bt1,Loam,5.7,Good,6-10 inches,Medium
+Bt2,Loam,5.9,High,10-16 inches,Medium
+2Bt3,Clay,7.0,High,16-21 inches,Medium
+2Bt4,Clay,7.3,High,21-26 inches,Medium
+2Bqm1,Indurated Duripan,8.0,High,26-29 inches,Medium
+2Bqm2,Duripan,8.0,High,29-48 inches,Medium
+2Bq,Duripan,8.0,High,48-60 inches,Medium

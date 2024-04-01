@@ -30,6 +30,10 @@ growing_season_data = {
 }
 growing_season_df = pd.DataFrame(growing_season_data)
 
+# past crop yield data for 2021
+# past gross value data for 2021
+
+
 # contains valley-wide summaries of the farm counts, acreage,
 # and crop diversity index by farm size bins
 

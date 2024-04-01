@@ -1,9 +1,14 @@
-AgCensus_FarmSizes_data = [
-    {'Basin': 'Almond Meats', 'Farm Size': 2022, 'Farm Count': 115500, 'Per Acre': 1.05, 'Total': 120900,
-     'Unit': 'ton'},
-    {'Crop': 'Almond Hulls', 'Year': 2022, 'Bearing Acreage': None, 'Per Acre': None, 'Total': 242000, 'Unit': 'ton'},
-    {'Crop': 'Almond Shells', 'Year': 2022, 'Bearing Acreage': None, 'Per Acre': None, 'Total': 120900, 'Unit': 'ton'},
-    {'Crop': 'Pistachios', 'Year': 2022, 'Bearing Acreage': 1126, 'Per Acre': 2.8, 'Total': 3160, 'Unit': 'ton'},
-    {'Crop': 'Walnuts', 'Year': 2022, 'Bearing Acreage': 74500, 'Per Acre': 2.45, 'Total': 192000, 'Unit': 'ton'}
-]
-AgCensus_FarmSizes_data_df = pd.DataFrame(AgCensus_FarmSizes_data)
+County,1 - 49 acre Farms,50 - 99 acre Farms,100 - 219 acre Farms,220 - 499 acre Farms,500 - 1999 acre Farms,Over 2000 Acre Farms
+ALAMEDA,9,2,3,2,1,0
+CALAVERAS,80,4,2,1,3,0
+MARIPOSA,1,0,0,0,0,0
+SAN JOAQUIN,4403,690,571,315,163,17
+STANISLAUS,4995,589,421,258,134,15
+MERCED,2892,474,416,271,178,14
+FRESNO,4815,943,730,553,530,58
+MADERA,775,232,198,117,119,36
+KINGS,779,186,184,124,113,14,14
+TULARE,3311,634,558,398,242,29
+KERN,667,244,371,291,271,53
+
+
