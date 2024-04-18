@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 import pandas as pd
-from sklearn.externals import joblib
+import joblib
 
 app = Flask(__name__)
 
@@ -8,16 +8,39 @@ app = Flask(__name__)
 model = joblib.load('model.pkl')
 
 # load csv files
-data = pd.read.csv('AgCensus_FarmSizes_data.csv')
-data = pd.read.csv('BasinWide_FarmSizes_data.csv')
-data = pd.read.csv('past_crop_yield21_data.csv')
-data = pd.read.csv('past_crop_yield22_data.csv')
-data = pd.read.csv('soil_characteristics_data.csv')
-data = pd.read.csv('ValleyWide_FarmSizes_data.csv')
+ag_census_data = pd.read_csv('AgCensus_FarmSizes_data.csv')
+basin_wide_data = pd.read_csv('BasinWide_FarmSizes_data.csv')
+past_yield_21_data = pd.read_csv('past_crop_yield21_data.csv')
+past_yield_22_data = pd.read_csv('past_crop_yield22_data.csv')
+soil_data = pd.read_csv('soil_characteristics_data.csv')
+valley_wide_data = pd.read_csv('ValleyWide_FarmSizes_data.csv')
 @app.route('/')
 def index():
     return render_template('index/.html')
 
+def extract_keyword(user_input):
+    user_input = user_input.lower()
+
+    # Defines list of keywords
+    keywords = [
+        'pistachios',
+        'walnuts',
+        'year',
+        'water use',
+        'profit',
+        'almond hulls',
+        'almond meats',
+        'almond shells',
+        'financial values',
+        'crop comparison',
+        'weather impact',
+    ]
+
+    for keyword in keywords:
+        if keyword in user_input:
+            return keyword
+
+    return None
 
 # Dictionary mapping keywords to prediction functions
 prediction_functions = {
@@ -32,7 +55,6 @@ prediction_functions = {
     'financial values': financial_values,
     'crop comparison': crop_comparison,
     'weather impact': weather_impact,
-    'sustainable practice': sustainable_practices,
 }
 
 def predict_pistachios(user_input):# Extract relevant information from user_input
@@ -236,6 +258,7 @@ def predict():
 
     # Return prediction as JSON response
     return jsonify({'prediction': prediction})
+
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -2,18 +2,30 @@ import pandas as pd
 from sklearn.linear_model import Ridge
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
+import joblib
+from pandas_dataset import temperature_data, humidity_data, rainfall_data, growing_season_data
+from pandas_dataset import past_crop_yield21, past_crop_yield22, farm_sizes, soil_data
 
-
-# Load the CSV files
-temperature_df = pd.read_csv('temperature_data.csv')
-humidity_df = pd.read_csv('humidity_data.csv')
-rainfall_df = pd.read_csv('rainfall_data.csv')
-growing_season_df = pd.read_csv('growing_season_data.csv')
+# Load the DataFrames from pandas_dataset.py
+temperature_df = pd.DataFrame(temperature_data)
+humidity_df = pd.DataFrame(humidity_data)
+rainfall_df = pd.DataFrame(rainfall_data)
+growing_season_df = pd.DataFrame(growing_season_data)
 
 # Merge the dataframes if needed
-# For example, if you want to combine temperature, humidity, and rainfall data
 data = pd.merge(temperature_df, humidity_df, on='month')
 data = pd.merge(data, rainfall_df, on='month')
+
+# Load additional CSV files
+past_crop_yield21 = pd.read_csv('past_crop_yield21_data.csv')
+past_crop_yield22 = pd.read_csv('past_crop_yield22_data.csv')
+farm_sizes = pd.read_csv('farm_sizes_data.csv')
+soil_data = pd.read_csv('soil_characteristics_data.csv')
+
+# Merge or concatenate additional data as needed
+# For example, if you want to include past crop yield data
+data = pd.concat([data, past_crop_yield21, past_crop_yield22], ignore_index=True)
+
 
 # Select the relevant features and target variable
 X = data[['avg_high', 'avg_low', 'humidity_level', 'rainfall_inches']]
@@ -25,6 +37,9 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 # Create and train the model
 model = Ridge(alpha=1.0)
 model.fit(X_train, y_train)
+
+# Save the trained model
+joblib.dump(model, 'model.pkl')
 
 # Make predictions
 predictions = model.predict(X_test)
