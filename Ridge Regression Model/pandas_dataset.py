@@ -30,21 +30,9 @@ growing_season_data = {
 }
 growing_season_df = pd.DataFrame(growing_season_data)
 
-# past crop yield data for 2021
-# past gross value data for 2021
-
-
-# contains valley-wide summaries of the farm counts, acreage,
-# and crop diversity index by farm size bins
-
-# Save the dataframes to a file for later use
-# temperature_df.to_csv('temperature_data.csv', index=False),
-# humidity_df.to_csv('humidity_data.csv', index=False),
-# rainfall_df.to_csv('rainfall_data.csv', index=False),
-# growing_season_df.to_csv('growing_season_data.csv', index=False)
-
 # Access separate CSV files
 past_crop_yield21 = pd.read_csv('past_crop_yield21_data.csv')
 past_crop_yield22 = pd.read_csv('past_crop_yield22_data.csv')
-farm_sizes = pd.read_csv('farm_sizes_data.csv')
-soil_data = pd.read_csv('soil_characteristics_data.csv')
+CropAnd_WaterProjections = pd.read_csv('CropAnd_WaterProjections.csv')
+soil_characteristics = pd.read_csv('soil_characteristics_data.csv')
+

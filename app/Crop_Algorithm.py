@@ -9,7 +9,7 @@ model = joblib.load('model.pkl')
 
 # load csv files
 ag_census_data = pd.read_csv('AgCensus_FarmSizes_data.csv')
-basin_wide_data = pd.read_csv('BasinWide_FarmSizes_data.csv')
+basin_wide_data = pd.read_csv('CropAnd_WaterProjections.csv')
 past_yield_21_data = pd.read_csv('past_crop_yield21_data.csv')
 past_yield_22_data = pd.read_csv('past_crop_yield22_data.csv')
 soil_data = pd.read_csv('soil_characteristics_data.csv')
